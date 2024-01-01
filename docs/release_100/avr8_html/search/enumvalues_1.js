@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['status_5fbad_5frequest_658',['STATUS_BAD_REQUEST',['../classghttp_1_1_h_t_t_p_response_status.htm#a13e6d558797ac154c068085f942cfd21a239b1b68f3859c6a3866d16f5f6ab3d4',1,'ghttp::HTTPResponseStatus']]],
+  ['status_5fconflict_659',['STATUS_CONFLICT',['../classghttp_1_1_h_t_t_p_response_status.htm#a13e6d558797ac154c068085f942cfd21a6698c5bb9963788c1abafc0246ea65e9',1,'ghttp::HTTPResponseStatus']]],
+  ['status_5fcontinue_660',['STATUS_CONTINUE',['../classghttp_1_1_h_t_t_p_response_status.htm#a13e6d558797ac154c068085f942cfd21a8db3a358fbe38cb764a828ef6d44d8d9',1,'ghttp::HTTPResponseStatus']]],
+  ['status_5fforbidden_661',['STATUS_FORBIDDEN',['../classghttp_1_1_h_t_t_p_response_status.htm#a13e6d558797ac154c068085f942cfd21a757fbb7ea96a73d3d8aced98dcbb4563',1,'ghttp::HTTPResponseStatus']]],
+  ['status_5ffound_662',['STATUS_FOUND',['../classghttp_1_1_h_t_t_p_response_status.htm#a13e6d558797ac154c068085f942cfd21af6f58b996bc7e53396ef088a1c577cfa',1,'ghttp::HTTPResponseStatus']]],
+  ['status_5fhttp_5fversion_5fnot_5fsupported_663',['STATUS_HTTP_VERSION_NOT_SUPPORTED',['../classghttp_1_1_h_t_t_p_response_status.htm#a13e6d558797ac154c068085f942cfd21a7518b430668b63e457157db539ee5d29',1,'ghttp::HTTPResponseStatus']]],
+  ['status_5finsufficient_5fstorage_664',['STATUS_INSUFFICIENT_STORAGE',['../classghttp_1_1_h_t_t_p_response_status.htm#a13e6d558797ac154c068085f942cfd21a2a6a0affd20e8165409dd7aa33db0819',1,'ghttp::HTTPResponseStatus']]],
+  ['status_5finternal_5fserver_5ferror_665',['STATUS_INTERNAL_SERVER_ERROR',['../classghttp_1_1_h_t_t_p_response_status.htm#a13e6d558797ac154c068085f942cfd21a0acb3676b2a0174193a4b9c939b10021',1,'ghttp::HTTPResponseStatus']]],
+  ['status_5floop_5fdetected_666',['STATUS_LOOP_DETECTED',['../classghttp_1_1_h_t_t_p_response_status.htm#a13e6d558797ac154c068085f942cfd21af86ec2b053d9b05fbd36edf9c08e66bf',1,'ghttp::HTTPResponseStatus']]],
+  ['status_5fmoved_5fpermanently_667',['STATUS_MOVED_PERMANENTLY',['../classghttp_1_1_h_t_t_p_response_status.htm#a13e6d558797ac154c068085f942cfd21a4c0b286d36b8d5756e509937f41a4c38',1,'ghttp::HTTPResponseStatus']]],
+  ['status_5fno_5fcontent_668',['STATUS_NO_CONTENT',['../classghttp_1_1_h_t_t_p_response_status.htm#a13e6d558797ac154c068085f942cfd21a57399281230383626b817549583532d0',1,'ghttp::HTTPResponseStatus']]],
+  ['status_5fnot_5fimplemented_669',['STATUS_NOT_IMPLEMENTED',['../classghttp_1_1_h_t_t_p_response_status.htm#a13e6d558797ac154c068085f942cfd21a41cbb7253150f9c4b7c753c7ea36861c',1,'ghttp::HTTPResponseStatus']]],
+  ['status_5fnot_5fmodified_670',['STATUS_NOT_MODIFIED',['../classghttp_1_1_h_t_t_p_response_status.htm#a13e6d558797ac154c068085f942cfd21a20dc6bfa7c348af65df21f08b4962edf',1,'ghttp::HTTPResponseStatus']]],
+  ['status_5fpermanent_5fredirect_671',['STATUS_PERMANENT_REDIRECT',['../classghttp_1_1_h_t_t_p_response_status.htm#a13e6d558797ac154c068085f942cfd21abc9ae9d9f6a09dd4c721497e221c2246',1,'ghttp::HTTPResponseStatus']]],
+  ['status_5fsee_5fother_672',['STATUS_SEE_OTHER',['../classghttp_1_1_h_t_t_p_response_status.htm#a13e6d558797ac154c068085f942cfd21a1aa5f7a3a6aa44ef7f1425cb450887e4',1,'ghttp::HTTPResponseStatus']]],
+  ['status_5fservice_5funavailable_673',['STATUS_SERVICE_UNAVAILABLE',['../classghttp_1_1_h_t_t_p_response_status.htm#a13e6d558797ac154c068085f942cfd21a82a0a3ed4b2c86bf2bf041838341200e',1,'ghttp::HTTPResponseStatus']]],
+  ['status_5ftemporary_5fredirect_674',['STATUS_TEMPORARY_REDIRECT',['../classghttp_1_1_h_t_t_p_response_status.htm#a13e6d558797ac154c068085f942cfd21a6206aa74aa60f6f3443b3662f52e5bce',1,'ghttp::HTTPResponseStatus']]],
+  ['status_5funauthorized_675',['STATUS_UNAUTHORIZED',['../classghttp_1_1_h_t_t_p_response_status.htm#a13e6d558797ac154c068085f942cfd21aee1c3da86b33a26037c0298e731f0d3c',1,'ghttp::HTTPResponseStatus']]]
+];

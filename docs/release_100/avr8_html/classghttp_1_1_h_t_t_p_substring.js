@@ -1,0 +1,26 @@
+var classghttp_1_1_h_t_t_p_substring =
+[
+    [ "HTTPSubstring", "classghttp_1_1_h_t_t_p_substring.htm#a7aa7fdafaf6458b888ff16eb4972edac", null ],
+    [ "HTTPSubstring", "classghttp_1_1_h_t_t_p_substring.htm#ac39d00955e5a47e6102e7efa2262623d", null ],
+    [ "Get", "classghttp_1_1_h_t_t_p_substring.htm#a5fb7bb7479294882fcec864ccd6024a2", null ],
+    [ "Null", "classghttp_1_1_h_t_t_p_substring.htm#a95fbf7605fca7868d41547c57750e17e", null ],
+    [ "operator!=", "classghttp_1_1_h_t_t_p_substring.htm#a6fb717821af5464f32d55043763d7ab8", null ],
+    [ "operator!=", "classghttp_1_1_h_t_t_p_substring.htm#a4682e525242849229ee4a7f2ae3d93a1", null ],
+    [ "operator&", "classghttp_1_1_h_t_t_p_substring.htm#a8523915d4ad511e15310f877e9823572", null ],
+    [ "operator++", "classghttp_1_1_h_t_t_p_substring.htm#af4954652dcd7910c996a0d0201500b54", null ],
+    [ "operator+=", "classghttp_1_1_h_t_t_p_substring.htm#a38bf01672678e709e2709aec37c0c126", null ],
+    [ "operator--", "classghttp_1_1_h_t_t_p_substring.htm#a9c2f0449412f591a2d46e0128c745a7c", null ],
+    [ "operator-=", "classghttp_1_1_h_t_t_p_substring.htm#a943ced20438aec29adac005f64488799", null ],
+    [ "operator==", "classghttp_1_1_h_t_t_p_substring.htm#a317eb6ceafcc76b73a5a3d898e917b80", null ],
+    [ "operator==", "classghttp_1_1_h_t_t_p_substring.htm#a55e658669cc3febd2f3b8d7b683ed4c4", null ],
+    [ "Set", "classghttp_1_1_h_t_t_p_substring.htm#a8a29f6da29e0bdc6f95db9863d52120e", null ],
+    [ "Set", "classghttp_1_1_h_t_t_p_substring.htm#ac4e8742657a7aa5a57915a37e318da1d", null ],
+    [ "StrNCmp", "classghttp_1_1_h_t_t_p_substring.htm#a711ddfb854ef9521c3e35b5d66a95bed", null ],
+    [ "StrNCmp", "classghttp_1_1_h_t_t_p_substring.htm#a2f0d8704bdad18d4a80bf8c967b085c4", null ],
+    [ "ThisPtr", "classghttp_1_1_h_t_t_p_substring.htm#a5ed56aa04818a6c85f7d3c1160afcd31", null ],
+    [ "Trim", "classghttp_1_1_h_t_t_p_substring.htm#afa5d42828e6befd027f9adfde504d043", null ],
+    [ "TrimLeft", "classghttp_1_1_h_t_t_p_substring.htm#a807fe5cd855e3337cffdb726ca124e3a", null ],
+    [ "TrimQuotes", "classghttp_1_1_h_t_t_p_substring.htm#adfe59209c9d76426f03527b8a4f5b64d", null ],
+    [ "TrimRight", "classghttp_1_1_h_t_t_p_substring.htm#a5bb2503f12e9b274689d415e45573735", null ],
+    [ "str_ptr_", "classghttp_1_1_h_t_t_p_substring.htm#a72616b9deae9d43d93a3d7991ce44274", null ]
+];
