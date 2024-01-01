@@ -1,2 +1,4 @@
 # ArduinoGHTTP
 Portable HTTP library with an interface similar to PHP for Arduino written in C++
+
+YOU DO NOT NEED THIS BRANCH IT IS FOR PUBLISH BY GITHUB PAGES.  FOLLOW DOXYGEN INFORMATION IN A RELEASE /docs FOLDER IF YOU DO WANT TO MAKE
