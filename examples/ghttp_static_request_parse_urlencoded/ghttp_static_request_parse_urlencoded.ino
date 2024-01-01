@@ -47,7 +47,7 @@
  *     pass = {hellodave}\n&
  * Done
  * 
- * Dave.C, 2020
+ * DG, 2020
  */
 
 

@@ -1,7 +1,7 @@
 /**
  * Example use of GHTTP (Embedded library for parsing HTTP requests and creating responses) - Part of example ghttp_static_request_response_simple
  * 
- * Dave.C, 2020
+ * DG, 2020
  */
 
 #if !defined(ROUTESOMETHING_H)

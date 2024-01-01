@@ -23,7 +23,7 @@
  *     CK      => I/O 52
  *     CS      => I/O 53
  *
- * Dave.C, 2020
+ * DG, 2020
  */
 
 // Include

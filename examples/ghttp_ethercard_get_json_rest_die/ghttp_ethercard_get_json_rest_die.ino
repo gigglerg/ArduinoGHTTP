@@ -19,7 +19,7 @@
  *
  * For AVR Mega.  This example does not work as the image data spans banks requiring 32bit PROGMEM pointers, feel free to correct as my preference is ARM
  *
- * Dave.C, 2020
+ * DG, 2020
  */
 
 // Include
