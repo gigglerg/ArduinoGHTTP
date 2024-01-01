@@ -75,7 +75,7 @@ To rebuild simply use make from within the "./docs" folder.  Use "make clean" to
 
 GHTTP is available for installation in the [Arduino Library Manager].  Alternatively it can be downloaded from GitHub using the following:
 
-1. Download the ZIP file from https://github.com/gigglerg/GHTTP/archive/master.zip
+1. Download the ZIP file (pick a release branch) from https://github.com/gigglerg/ArduinoGHTTP.git
 2. Rename the downloaded file to `GHTTP.zip`
 3. From the Arduino IDE: Sketch -> Include Library... -> Add .ZIP Library...
 4. Restart the Arduino IDE to see "GHTTP" library with examples
