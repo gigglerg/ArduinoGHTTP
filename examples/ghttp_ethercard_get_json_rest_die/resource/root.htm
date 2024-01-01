@@ -1,0 +1,78 @@
+<html>
+	<head>
+		<meta charset='iso-8859-1'/>
+		<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+		<script src='js/die.js'></script>
+		<script>
+			$(window).on('load', function() {
+				$('#dice').fadeIn( function() {
+					die.init(get_die_ids());
+					setInterval(throw_dice, 12000);
+				});
+			});
+
+			function get_die_ids() {
+				var ids = [];
+				$('#dice').find('object').each(function(){ ids.push('#'+ this.id); });
+				return ids;
+			}
+
+			async function feedback(t='') {
+				l = $('#feedback').val().length;
+				if (l>=448) {
+					await $('#feedback').val('');
+					l = 0;
+				}
+				t.length ? await $('#feedback').val(t + '\n' + $('#feedback').val()) : await $('#feedback').val('');
+			}
+
+			async function throw_dice() {
+				await $('#dice').fadeOut().promise();
+				var ids = get_die_ids();
+				// This is our JSON request object, asks device to throw and gives number of die
+				var req = {
+					req: 'throw',
+					die: ids.length
+				};
+				await feedback('Out: ' + JSON.stringify(req));
+				// post our throw request via JQuery using AJAX
+				await $.post('/json/throw', req)
+					.done(function(data) {
+						feedback('In: ' + JSON.stringify(data));
+						die.throw(ids, data);
+					})
+					.fail(function(xhr, status, error) {
+						feedback('Error: ' + status.toLowerCase() + ', ' + error.toLowerCase());
+					});
+				await $('#dice').fadeIn().promise();
+			}
+		</script>
+		<style>
+			#feedback {
+				padding: 1em;
+			}
+			#dice {
+				display: none;
+				padding: 1em;
+			}
+		</style>
+	</head>
+	<body>
+		<p>This example shows AJAX rest POST requests from your client via JQuery to ask device to throw N die and give back the JSON encoded results which are then displayed on the SVG graphic representation below.  The dice throws happen over time repeatedly (~12S) but you can manually throw them by clicking the button below.  The feedback text shows JSON request (from client) and response (from device), use clear button to remove content.</p>
+		<button onclick='throw_dice()'>Manual Throw</button>
+		<button onclick='feedback()'>Clear</button>
+		<p>Feedback:<textarea id='feedback' readonly rows='7' cols='100'></textarea></p>
+		<div id='dice'>
+			<!-- die colour taken from style fill on object, it is an svg dom and so js copies it when updating face dots, it also means simple css wont work because sandboxing, doh! -->
+			<object id='obj_die1' data='image/die_optimised.svg' type='image/svg+xml' style='fill: #ffcc00'>
+			Your client does not support SVG
+			</object>
+			<object id='obj_die2' data='image/die_optimised.svg' type='image/svg+xml' style='fill: #ff0000'>
+			Your client does not support SVG
+			</object>
+			<object id='obj_die3' data='image/die_optimised.svg' type='image/svg+xml' style='fill: #00ccff'>
+			Your client does not support SVG
+			</object>
+		</div>
+	</body>
+</html>

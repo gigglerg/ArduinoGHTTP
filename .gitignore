@@ -30,3 +30,11 @@
 *.exe
 *.out
 *.app
+
+# Project specific
+.DS_Store
+*.esproj
+*.bak
+*.log
+/docs/avr8_html
+/docs/examples.txt

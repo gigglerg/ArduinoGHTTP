@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+header="./resource/ghttp_chrome.h"
+ghttp_logo_file="./resource/ghttp_chrome.jpg"
+xxd -i ${ghttp_logo_file} ${header}
+tempfile=$(mktemp)
+sed "s/unsigned/const unsigned/g" ${header} > ${tempfile}
+rm ${header}
+mv ${tempfile} ${header}

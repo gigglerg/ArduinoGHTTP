@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+header="./resource/toastjpg.h"
+jpgfile="./resource/toast.jpg"
+xxd -i ${jpgfile} ${header}
+tempfile=$(mktemp)
+sed "s/unsigned/const/g" ${header} > ${tempfile}
+mv ${tempfile} ${header}
+sed "s/\[\] =/\[\] PROGMEM =/g" ${header} > ${tempfile}
+rm ${header}
+mv ${tempfile} ${header}

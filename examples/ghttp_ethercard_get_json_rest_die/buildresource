@@ -1,0 +1,32 @@
+#!/usr/bin/bash
+rs_path="./resource"
+
+next() {
+    echo $1
+}
+
+rest() {
+    shift
+    echo $*
+}
+
+function cycle {
+    s=$@
+    for i in $s; do
+        convert $(next $s)
+        s=$(rest $s)
+    done
+}
+
+function convert {
+    local s="${rs_path}/${1}"
+    local o="${rs_path}/${1%.*}.h"
+    echo "${s} => ${o}"
+    xxd -i ${s} ${o}
+    tf=$(mktemp)
+    sed "s/unsigned/const unsigned/g" ${o} > ${tf}
+    rm ${o}
+    mv ${tf} ${o}
+}
+
+cycle root.htm die_optimised.svg die.js

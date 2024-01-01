@@ -1,0 +1,17 @@
+{
+  "name": "GJSON",
+  "description": "Embedded library for parsing HTTP requests and creating responses (portable)",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/gigglerg/ghttp_library.git"
+  },
+  "version": "1.0.0",
+  "frameworks": "arduino",
+  "platforms": [
+    "atmelavr",
+    "stm32",
+    "91sam",
+    "at91sam"
+  ]
+}

@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+header="./resource/favicon.h"
+iconfile="./resource/favicon.png"
+xxd -i ${iconfile} ${header}
+tempfile=$(mktemp)
+sed "s/unsigned/const unsigned/g" ${header} > ${tempfile}
+rm ${header}
+mv ${tempfile} ${header}

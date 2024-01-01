@@ -1,0 +1,150 @@
+diff --git a/src/enc28j60.cpp b/src/enc28j60.cpp
+index e44b61c..4d4007c 100644
+--- a/src/enc28j60.cpp
++++ b/src/enc28j60.cpp
+@@ -14,6 +14,7 @@
+ #include <Wprogram.h> // Arduino 0022
+ #endif
+ #include "enc28j60.h"
++#include <SPI.h> // Using library SPI in folder: D:\Documents\Arduino\hardware\STM32\STM32F1XX\libraries\SPI
+ 
+ uint16_t ENC28J60::bufferSize;
+ bool ENC28J60::broadcast_enabled = false;
+@@ -232,6 +233,7 @@ static byte Enc28j60Bank;
+ static byte selectPin;
+ 
+ void ENC28J60::initSPI () {
++#if defined(ARDUINO_ARCH_AVR)
+     pinMode(SS, OUTPUT);
+     digitalWrite(SS, HIGH);
+     pinMode(MOSI, OUTPUT);
+@@ -244,39 +246,59 @@ void ENC28J60::initSPI () {
+ 
+     SPCR = bit(SPE) | bit(MSTR); // 8 MHz @ 16
+     bitSet(SPSR, SPI2X);
++#else
++    SPI.begin();
++	SPI.setBitOrder(MSBFIRST);
++#endif
+ }
+ 
+ static void enableChip () {
++#if defined(ARDUINO_ARCH_AVR)
+     cli();
++#endif
+     digitalWrite(selectPin, LOW);
+ }
+ 
+ static void disableChip () {
+     digitalWrite(selectPin, HIGH);
++#if defined(ARDUINO_ARCH_AVR)
+     sei();
++#endif
+ }
+ 
+ static void xferSPI (byte data) {
++#if defined(ARDUINO_ARCH_AVR)
+     SPDR = data;
+-    while (!(SPSR&(1<<SPIF)))
+-        ;
++    while (!(SPSR&(1<<SPIF)));
++#endif
+ }
+ 
+ static byte readOp (byte op, byte address) {
+     enableChip();
++
++#if defined(ARDUINO_ARCH_AVR)
+     xferSPI(op | (address & ADDR_MASK));
+     xferSPI(0x00);
+     if (address & 0x80)
+         xferSPI(0x00);
+     byte result = SPDR;
++#else
++	SPI.transfer(op | (address & ADDR_MASK));
++	byte result = SPI.transfer(0x00);
++#endif
+     disableChip();
+     return result;
+ }
+ 
+ static void writeOp (byte op, byte address, byte data) {
+     enableChip();
++#if defined(ARDUINO_ARCH_AVR)
+     xferSPI(op | (address & ADDR_MASK));
+     xferSPI(data);
++#else
++	SPI.transfer(op | (address & ADDR_MASK));
++	SPI.transfer(data);
++#endif
+     disableChip();
+ }
+ 
+@@ -285,9 +307,13 @@ static void readBuf(uint16_t len, byte* data) {
+ 
+     enableChip();
+     if (len != 0) {
++#if defined(ARDUINO_ARCH_AVR)
+         xferSPI(ENC28J60_READ_BUF_MEM);
+-
+         SPDR = 0x00;
++#else
++		SPI.transfer(ENC28J60_READ_BUF_MEM);
++#endif
++#if defined(ARDUINO_ARCH_AVR)
+         while (--len) {
+             while (!(SPSR & (1<<SPIF)))
+                 ;
+@@ -298,6 +324,11 @@ static void readBuf(uint16_t len, byte* data) {
+         while (!(SPSR & (1<<SPIF)))
+             ;
+         *data++ = SPDR;
++#else
++        while (len--) {
++			*data++ = SPI.transfer(0x00);
++		}
++#endif
+     }
+     disableChip();
+ }
+@@ -305,6 +336,7 @@ static void readBuf(uint16_t len, byte* data) {
+ static void writeBuf(uint16_t len, const byte* data) {
+     enableChip();
+     if (len != 0) {
++#if defined(ARDUINO_ARCH_AVR)
+         xferSPI(ENC28J60_WRITE_BUF_MEM);
+ 
+         SPDR = *data++;
+@@ -316,6 +348,12 @@ static void writeBuf(uint16_t len, const byte* data) {
+      	};
+         while (!(SPSR & (1<<SPIF)))
+             ;
++#else
++		SPI.transfer(ENC28J60_WRITE_BUF_MEM);
++		while (len--) {
++			SPI.transfer(*data++);
++		}
++#endif
+     }
+     disableChip();
+ }
+@@ -365,7 +403,9 @@ static void writePhy (byte address, uint16_t data) {
+ 
+ byte ENC28J60::initialize (uint16_t size, const byte* macaddr, byte csPin) {
+     bufferSize = size;
++#if defined(ARDUINO_ARCH_AVR)
+     if (bitRead(SPCR, SPE) == 0)
++#endif
+         initSPI();
+     selectPin = csPin;
+     pinMode(selectPin, OUTPUT);
+@@ -653,7 +693,9 @@ uint8_t ENC28J60::doBIST ( byte csPin) {
+ #define RANDOM_RACE     0b1100
+ 
+ // init
++#if defined(ARDUINO_ARCH_AVR)
+     if (bitRead(SPCR, SPE) == 0)
++#endif
+         initSPI();
+     selectPin = csPin;
+     pinMode(selectPin, OUTPUT);
