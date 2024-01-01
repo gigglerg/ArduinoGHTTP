@@ -71,7 +71,7 @@
  *     dataset00 = !@ABDEFGHIJKLM0 (15) as sendtxt.bin, type application/octet-stream
  * Done
  * 
- * Dave.C, 2020
+ * DG, 2020
  */
 
 

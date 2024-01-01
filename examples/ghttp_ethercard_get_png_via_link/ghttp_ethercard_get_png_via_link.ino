@@ -16,7 +16,7 @@
  *
  * For AVR Mega2560.  This example does not work as the image data spans banks requiring 32bit PROGMEM pointers, feel free to correct
  *
- * Dave.C, 2020
+ * DG, 2020
  */
 
 // Include

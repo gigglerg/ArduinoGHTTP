@@ -3,7 +3,7 @@
  * 
  * Ethercard TCP/IP packet i/f wrapper to simplify application and remove h/w detail.  You don't have to use this API
  * 
- * Dave.C, 2020
+ * DG, 2020
  */
 
 #if !defined(ETHERCARD_WRAP_H)

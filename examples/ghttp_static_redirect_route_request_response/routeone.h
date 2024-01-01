@@ -1,7 +1,7 @@
 /**
  * Example use of GHTTP (Embedded library for parsing HTTP requests and creating responses) - Part of example ghttp_static_redirect_route_request_response
  * 
- * Dave.C, 2020
+ * DG, 2020
  */
 
 #if !defined(ROUTEONE_H)

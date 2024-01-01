@@ -6,7 +6,7 @@
  * 
  * Requires: https://github.com/stm32duino 1.4.0 and library Serasidis_EtherCard_STM with enc28j60.cpp.patch applied
  *
- * Dave.C, 2020
+ * DG, 2020
  */
 
 #if !defined(GHTTP_APP_H)
